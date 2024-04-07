@@ -1,0 +1,151 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    text-align: center;
+  }
+
+  .hero-text-container {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .destination-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destination {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-carousel {
+    text-align: center;
+  }
+
+  .testimonial {
+    margin-bottom: 20px;
+  }
+}
+
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.hero-text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.hero-text-container h2 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.destinations {
+  padding: 20px;
+}
+
+.destination-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.destination {
+  width: calc(33% - 20px);
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.destination img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.destination h3 {
+  margin-bottom: 5px;
+}
+
+.testimonials {
+  padding: 20px;
+}
+
+.testimonial-carousel {
+}
+
+.testimonial {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.testimonial p:first-child {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.cta {
+  text-align: center;
+  padding: 20px;
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.cta a {
+  background-color: #fff;
+  color: #2ecc71;
+  padding: 10px 20px;
+  border: 1px solid #2ecc71;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #eee;
+}
+
+.social-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.social-links a i {
+  font-size: 20px;
+  color: #333;
+}
