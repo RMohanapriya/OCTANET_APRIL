@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Project Tasks</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* External CSS styles */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    .high-priority {
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    .medium-priority {
+      background-color: #ff9800;
+      color: #000;
+    }
+
+    .low-priority {
+      background-color: #4caf50;
+      color: #fff;
+    }
+
+    .label-content {
+      background-color: #2196f3;
+      color: #fff;
+    }
+
+    .label-design {
+      background-color: #9c27b0;
+      color: #fff;
+    }
+
+    .label-development {
+      background-color: #795548;
+      color: #fff;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #f0f0f0;
+    }
+
+    .progress-bar-inner {
+      height: 20px;
+      background-color: #4caf50;
+      text-align: center;
+      line-height: 20px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Website Project Tasks</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Task Name</th>
+        <th>Deadline</th>
+        <th>Priority</th>
+        <th>Label</th>
+        <th>Progress</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Write Homepage Content</td>
+        <td>2024-04-20</td>
+        <td class="high-priority">High</td>
+        <td class="label-content">Content</td>
+        <td>
+          <div class="progress-bar">
+            <div class="progress-bar-inner" style="width: 50%;">50%</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Design Contact Form</td>
+        <td>2024-04-15</td>
+        <td class="medium-priority">Medium</td>
+        <td class="label-design">Design</td>
+        <td>
+          <div class="progress-bar">
+            <div class="progress-bar-inner" style="width: 20%;">20%</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Develop User Login Functionality</td>        
+        <td>2024-04-25</td>
+        <td class="high-priority">High</td>
+        <td class="label-development">Development</td>
+        <td>
+          <div class="progress-bar">
+            <div class="progress-bar-inner" style="width: 0%;">0%</div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  
+</body>
+</html>
