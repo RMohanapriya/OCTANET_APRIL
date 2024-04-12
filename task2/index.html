@@ -1,116 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Project Tasks</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* External CSS styles */
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border: 1px solid #ddd;
-    }
-
-    .high-priority {
-      background-color: #f44336;
-      color: #fff;
-    }
-
-    .medium-priority {
-      background-color: #ff9800;
-      color: #000;
-    }
-
-    .low-priority {
-      background-color: #4caf50;
-      color: #fff;
-    }
-
-    .label-content {
-      background-color: #2196f3;
-      color: #fff;
-    }
-
-    .label-design {
-      background-color: #9c27b0;
-      color: #fff;
-    }
-
-    .label-development {
-      background-color: #795548;
-      color: #fff;
-    }
-
-    .progress-bar {
-      width: 100%;
-      background-color: #f0f0f0;
-    }
-
-    .progress-bar-inner {
-      height: 20px;
-      background-color: #4caf50;
-      text-align: center;
-      line-height: 20px;
-      color: #fff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .task-details {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .priority-label {
+            margin-right: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .deadline-label {
+            margin-right: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: #ff7043;
+            color: white;
+        }
+        .add-task input[type="text"],
+        .add-task input[type="date"],
+        .add-task select {
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .add-task button {
+            padding: 8px 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .add-task button:hover {
+            background-color: #45a049;
+        }
+        .remove-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        .remove-btn:hover {
+            background-color: #da190b;
+        }
+        .dependent-on {
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Website Project Tasks</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Task Name</th>
-        <th>Deadline</th>
-        <th>Priority</th>
-        <th>Label</th>
-        <th>Progress</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Write Homepage Content</td>
-        <td>2024-04-20</td>
-        <td class="high-priority">High</td>
-        <td class="label-content">Content</td>
-        <td>
-          <div class="progress-bar">
-            <div class="progress-bar-inner" style="width: 50%;">50%</div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>Design Contact Form</td>
-        <td>2024-04-15</td>
-        <td class="medium-priority">Medium</td>
-        <td class="label-design">Design</td>
-        <td>
-          <div class="progress-bar">
-            <div class="progress-bar-inner" style="width: 20%;">20%</div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>Develop User Login Functionality</td>        
-        <td>2024-04-25</td>
-        <td class="high-priority">High</td>
-        <td class="label-development">Development</td>
-        <td>
-          <div class="progress-bar">
-            <div class="progress-bar-inner" style="width: 0%;">0%</div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-  
+    <div class="container">
+        <h1>To-Do List</h1>
+        <ul id="task-list">
+            <!-- Tasks will be added dynamically here -->
+        </ul>
+        <div class="add-task">
+            <input type="text" id="task-input" placeholder="Task">
+            <input type="date" id="deadline-input">
+            <select id="priority-select">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <select id="dependency-select">
+                <option value="">No Dependency</option>
+                <option value="task1">Task 1</option>
+                <option value="task2">Task 2</option>
+                <!-- Add other tasks as options -->
+            </select>
+            <button id="add-btn">Add</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const taskList = document.getElementById("task-list");
+            const taskInput = document.getElementById("task-input");
+            const deadlineInput = document.getElementById("deadline-input");
+            const prioritySelect = document.getElementById("priority-select");
+            const dependencySelect = document.getElementById("dependency-select");
+            const addBtn = document.getElementById("add-btn");
+
+            addBtn.addEventListener("click", function() {
+                const taskText = taskInput.value.trim();
+                const deadline = deadlineInput.value;
+                const priority = prioritySelect.value;
+                const dependency = dependencySelect.value;
+
+                if (taskText !== "") {
+                    const li = document.createElement("li");
+                    li.innerHTML = `
+                        <div class="task-details">
+                            <span class="priority-label priority-${priority}">${priority}</span>
+                            <span class="deadline-label">${deadline}</span>
+                            <span>${taskText}</span>
+                            <button class="remove-btn">Delete</button>
+                        </div>
+                        <div class="dependent-on">Dependent on: ${dependency}</div>
+                    `;
+                    taskList.appendChild(li);
+                    taskInput.value = "";
+                    deadlineInput.value = "";
+                    prioritySelect.selectedIndex = 0;
+                    dependencySelect.selectedIndex = 0;
+                }
+            });
+
+            // Event delegation for delete button
+            taskList.addEventListener("click", function(event) {
+                if (event.target && event.target.className === "remove-btn") {
+                    event.target.parentNode.parentNode.remove();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
