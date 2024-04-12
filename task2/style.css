@@ -1,42 +1,90 @@
-</head>
-<body>
-  <h1>Website Project Tasks</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Task Name</th>
-        <th>Deadline</th>
-        <th>Priority</th>
-        <th>Label</th>
-        <th>Progress</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Write Homepage Content</td>
-        <td>2024-04-20</td>
-        <td class="high-priority">High</td>
-        <td class="content">Content</td>
-        <td>
-          <progress value="50" max="100">50%</progress>
-        </td>
-      </tr>
-      <tr>
-        <td>Design Contact Form</td>
-        <td>2024-04-15</td>
-        <td class="medium-priority">Medium</td>
-        <td class="design">Design</td>
-        <td>
-          <progress value="20" max="100">20%</progress>
-        </td>
-      </tr>
-      <tr>
-        <td>Develop User Login Functionality</td>        
-        <td>2024-04-25</td>
-        <td class="high-priority">High</td>
-        <td class="development">Development</td>
-        <td>
-          <progress value="0" max="100">0%</progress>
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.task-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.priority-label {
+  margin-right: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.deadline-label {
+  margin-right: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #ff7043;
+  color: white;
+}
+
+.add-task input[type="text"],
+.add-task input[type="date"],
+.add-task select {
+  padding: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.add-task button {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.add-task button:hover {
+  background-color: #45a049;
+}
+
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.remove-btn:hover {
+  background-color: #da190b;
+}
+
+.dependent-on {
+  font-size: 14px;
+}
+
         </td>
       </tr>
     </tbody>
